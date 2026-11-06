@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.21)
+project(path_optimization_benchmark LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+foreach(algorithm IN ITEMS dp SA evol)
+  add_executable(${algorithm} code/${algorithm}.cpp)
+endforeach()
+add_executable(data_generator code/data.cpp)
